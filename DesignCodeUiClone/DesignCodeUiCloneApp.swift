@@ -11,7 +11,7 @@ import SwiftUI
 struct DesignCodeUiCloneApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().modifier(DarkModeViewModifier())
         }
     }
 }

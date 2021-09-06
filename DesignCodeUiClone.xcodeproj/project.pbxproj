@@ -11,6 +11,17 @@
 		047B851726E65D890059A153 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B851626E65D890059A153 /* ContentView.swift */; };
 		047B851926E65D8E0059A153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047B851826E65D8E0059A153 /* Assets.xcassets */; };
 		047B851C26E65D8E0059A153 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047B851B26E65D8E0059A153 /* Preview Assets.xcassets */; };
+		047B852926E663360059A153 /* LearnNow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B852826E663360059A153 /* LearnNow.swift */; };
+		047B852B26E6633E0059A153 /* Courses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B852A26E6633E0059A153 /* Courses.swift */; };
+		047B852D26E663450059A153 /* Tutorials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B852C26E663450059A153 /* Tutorials.swift */; };
+		047B852F26E663510059A153 /* Livestreams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B852E26E663510059A153 /* Livestreams.swift */; };
+		047B853126E663590059A153 /* More.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853026E663590059A153 /* More.swift */; };
+		047B853326E663680059A153 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853226E663680059A153 /* MainTabView.swift */; };
+		047B853626E665DA0059A153 /* LivestreamsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853526E665DA0059A153 /* LivestreamsCard.swift */; };
+		047B853826E665E60059A153 /* TutorialsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853726E665E60059A153 /* TutorialsCard.swift */; };
+		047B853A26E665F60059A153 /* CoursesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853926E665F60059A153 /* CoursesCard.swift */; };
+		047B853C26E695DC0059A153 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853B26E695DC0059A153 /* BlurView.swift */; };
+		047B853F26E6A1AD0059A153 /* DarkModeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853E26E6A1AD0059A153 /* DarkModeViewModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +31,17 @@
 		047B851826E65D8E0059A153 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		047B851B26E65D8E0059A153 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		047B851D26E65D8E0059A153 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		047B852826E663360059A153 /* LearnNow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnNow.swift; sourceTree = "<group>"; };
+		047B852A26E6633E0059A153 /* Courses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Courses.swift; sourceTree = "<group>"; };
+		047B852C26E663450059A153 /* Tutorials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorials.swift; sourceTree = "<group>"; };
+		047B852E26E663510059A153 /* Livestreams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Livestreams.swift; sourceTree = "<group>"; };
+		047B853026E663590059A153 /* More.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = More.swift; sourceTree = "<group>"; };
+		047B853226E663680059A153 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		047B853526E665DA0059A153 /* LivestreamsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamsCard.swift; sourceTree = "<group>"; };
+		047B853726E665E60059A153 /* TutorialsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsCard.swift; sourceTree = "<group>"; };
+		047B853926E665F60059A153 /* CoursesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCard.swift; sourceTree = "<group>"; };
+		047B853B26E695DC0059A153 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		047B853E26E6A1AD0059A153 /* DarkModeViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeViewModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,11 +74,17 @@
 		047B851326E65D890059A153 /* DesignCodeUiClone */ = {
 			isa = PBXGroup;
 			children = (
-				047B851426E65D890059A153 /* DesignCodeUiCloneApp.swift */,
-				047B851626E65D890059A153 /* ContentView.swift */,
+				047B853D26E6A1940059A153 /* Modifiers */,
+				047B853426E665C00059A153 /* Item */,
+				047B852726E6632A0059A153 /* Model */,
+				047B852626E663260059A153 /* View */,
+				047B852526E6631F0059A153 /* ViewModel */,
 				047B851826E65D8E0059A153 /* Assets.xcassets */,
 				047B851D26E65D8E0059A153 /* Info.plist */,
 				047B851A26E65D8E0059A153 /* Preview Content */,
+				047B853226E663680059A153 /* MainTabView.swift */,
+				047B851626E65D890059A153 /* ContentView.swift */,
+				047B851426E65D890059A153 /* DesignCodeUiCloneApp.swift */,
 			);
 			path = DesignCodeUiClone;
 			sourceTree = "<group>";
@@ -67,6 +95,51 @@
 				047B851B26E65D8E0059A153 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		047B852526E6631F0059A153 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		047B852626E663260059A153 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				047B852826E663360059A153 /* LearnNow.swift */,
+				047B852A26E6633E0059A153 /* Courses.swift */,
+				047B852C26E663450059A153 /* Tutorials.swift */,
+				047B852E26E663510059A153 /* Livestreams.swift */,
+				047B853026E663590059A153 /* More.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		047B852726E6632A0059A153 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		047B853426E665C00059A153 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				047B853526E665DA0059A153 /* LivestreamsCard.swift */,
+				047B853726E665E60059A153 /* TutorialsCard.swift */,
+				047B853926E665F60059A153 /* CoursesCard.swift */,
+				047B853B26E695DC0059A153 /* BlurView.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		047B853D26E6A1940059A153 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				047B853E26E6A1AD0059A153 /* DarkModeViewModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +211,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047B853A26E665F60059A153 /* CoursesCard.swift in Sources */,
+				047B852B26E6633E0059A153 /* Courses.swift in Sources */,
+				047B853F26E6A1AD0059A153 /* DarkModeViewModifier.swift in Sources */,
+				047B852F26E663510059A153 /* Livestreams.swift in Sources */,
 				047B851726E65D890059A153 /* ContentView.swift in Sources */,
+				047B853326E663680059A153 /* MainTabView.swift in Sources */,
+				047B853C26E695DC0059A153 /* BlurView.swift in Sources */,
+				047B852D26E663450059A153 /* Tutorials.swift in Sources */,
+				047B853826E665E60059A153 /* TutorialsCard.swift in Sources */,
+				047B853626E665DA0059A153 /* LivestreamsCard.swift in Sources */,
+				047B853126E663590059A153 /* More.swift in Sources */,
 				047B851526E65D890059A153 /* DesignCodeUiCloneApp.swift in Sources */,
+				047B852926E663360059A153 /* LearnNow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
