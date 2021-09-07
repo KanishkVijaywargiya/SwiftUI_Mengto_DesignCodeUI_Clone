@@ -8,16 +8,91 @@
 import SwiftUI
 
 struct LearnNow: View {
+    @State var show = false
+    @State var isDisabled = false
+    @State var selectedItem: LivestreamsDummyData? = nil
+    
+    var livestream: LivestreamsDummyData = livestreams[0]
+    
+    @Namespace var namespace
+    
     var body: some View {
+        ZStack {
+            content4
+            fullContent
+                .background(BlurView(style: .systemMaterial).edgesIgnoringSafeArea(.all))
+                .ignoresSafeArea()
+        }
+        .navigationBarTitle(Text("Learn Swift"))
+    }
+    
+    // livestream contents
+    @ViewBuilder
+    var content4: some View {
         ScrollView(showsIndicators: false) {
-            LazyVStack {
-                VStack(alignment: .leading) {
-                    LivestreamsCard(title: "UI Design Livestreams", courseLogo: "penlogo", subHeadline: "16 sections - 22 hours", gradient1: Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)), gradient2: Color(#colorLiteral(red: 0.9098039216, green: 0.2, blue: 0.3137254902, alpha: 1)), gradient3: Color(#colorLiteral(red: 0.9098039216, green: 0.2, blue: 0.3137254902, alpha: 1)), backgroundImg: #imageLiteral(resourceName: "livestream3"), footerText: "UI")
-                        .frame(height: 350)
-                    LivestreamsCard(title: "SwiftUI Livestreams", courseLogo: "swiftuiLogo", subHeadline: "13 section - 17 hours", gradient1: Color(#colorLiteral(red: 0.776, green: 0.266, blue: 0.988, alpha: 1)), gradient2: Color(#colorLiteral(red: 0.356, green: 0.348, blue: 0.870, alpha: 1)), gradient3: Color(#colorLiteral(red: 0.357, green: 0.349, blue: 0.870, alpha: 1)), backgroundImg: #imageLiteral(resourceName: "livestreams1"), footerText: "SwiftUI")
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Recent livestreams")
+                    .font(.title).bold()
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 16)
+                
+                LazyVStack {
+                    ForEach(livestreams) { item in
+                        VStack(alignment: .leading) {
+                            LivestreamsCard(livestream: item)
+                                .matchedGeometryEffect(id: item.id, in: namespace, isSource: !show)
+                                .frame(height: 350)
+                                .onTapGesture {
+                                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
+                                        show.toggle()
+                                        selectedItem = item
+                                        isDisabled = true
+                                    }
+                                }
+                                .disabled(isDisabled)
+                        }
+                        .matchedGeometryEffect(id: "container\(item.id)", in: namespace, isSource: !show)
+                    }
                 }
             }
         }
+    }
+    
+    // detail view
+    @ViewBuilder
+    var fullContent: some View {
+        if selectedItem != nil {
+            ZStack(alignment: .topTrailing) {
+                DetailView(livestream: selectedItem!, namespace: namespace)
+                
+                #if os(iOS)
+                    CLosedButton
+                        .padding(.top, 50)
+                        .padding(.trailing, 16)
+                #else
+                CLosedButton
+                    .padding()
+                #endif
+            }
+            .zIndex(2)
+            .frame(maxWidth: 712)
+            .frame(maxWidth: .infinity)
+        }
+    }
+    
+    // closed button
+    @ViewBuilder
+    var CLosedButton: some View {
+        CloseButton()
+            .onTapGesture {
+                withAnimation(.spring()) {
+                    show.toggle()
+                    selectedItem = nil
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        isDisabled = false
+                    }
+                }
+            }
     }
 }
 
