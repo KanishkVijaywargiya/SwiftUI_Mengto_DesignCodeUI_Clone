@@ -9,6 +9,10 @@ import SwiftUI
 
 struct DetailView: View {
     @State var showModal = false
+    @State private var dragOffset = CGSize.zero
+    
+    @State var rotation: Angle = .zero
+    
     var livestream: LivestreamsDummyData = livestreams[0]
     var namespace: Namespace.ID
     
@@ -75,14 +79,14 @@ struct DetailView: View {
     var livestreamRow: some View {
         VStack {
             ForEach(livestreamSection) { item in
-                    LivestreamsCardRows(item: item)
-                        .sheet(isPresented: $showModal) {
-                            // TODO: add the screen view
-                            Text("Destination")
-                        }
-                        .onTapGesture {
-                            showModal = true
-                        }
+                LivestreamsCardRows(item: item)
+                    .sheet(isPresented: $showModal) {
+                        // TODO: add the screen view
+                        Text("Destination")
+                    }
+                    .onTapGesture {
+                        showModal = true
+                    }
                 Divider()
             }
             .padding(.horizontal, 20)
@@ -97,6 +101,16 @@ struct DetailView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(height: 80)
+            .offset(dragOffset)
+            .gesture(
+                DragGesture()
+                    .onChanged { gesture in
+                        dragOffset = gesture.translation
+                    }
+                    .onEnded { gesture in
+                        dragOffset = .zero
+                    }
+            )
             .padding(.horizontal, 20)
             .matchedGeometryEffect(id: "backimg", in: namespace)
     }
