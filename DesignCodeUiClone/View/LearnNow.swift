@@ -31,32 +31,73 @@ struct LearnNow: View {
     var content: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 0) {
+                Text("Learn Design")
+                    .font(.largeTitle).bold()
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 16)
+                
+                Text("Recent courses")
+                    .font(.title).bold()
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 16)
+                
+                courseCards
+                
+                Text("Recent tutorials")
+                    .font(.title).bold()
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 16)
+                
                 Text("Recent livestreams")
                     .font(.title).bold()
                     .padding(.horizontal, 20)
                     .padding(.bottom, 16)
                 
-                LazyVStack {
-                    ForEach(livestreams) { item in
-                        VStack(alignment: .leading) {
-                            LivestreamsCard(livestream: item)
-                                .matchedGeometryEffect(id: item.id, in: namespace, isSource: !show)
-                                .frame(height: 350)
-                                .onTapGesture {
-                                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
-                                        show.toggle()
-                                        selectedItem = item
-                                        isDisabled = true
-                                    }
-                                }
-                                .disabled(isDisabled)
-                        }
-                        .matchedGeometryEffect(id: "container\(item.id)", in: namespace, isSource: !show)
+                livestreamCards
+            }
+        }
+        .navigationBarHidden(true)
+        //        .navigationTitle("Learn Swift")
+    }
+    
+    // courses cards
+    @ViewBuilder
+    var courseCards: some View {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 180), spacing: 16)], spacing: 16) {
+            ForEach(courses) { item in
+                VStack {
+                    NavigationLink(destination: Text("Destination")) {
+                        CoursesCard(course: item)
+                            .frame(height: 250)
                     }
                 }
             }
         }
-        .navigationTitle("Learn Swift")
+        .padding(16)
+        .frame(maxWidth: .infinity)
+    }
+    
+    // livestream cards
+    @ViewBuilder
+    var livestreamCards: some View {
+        LazyVStack {
+            ForEach(livestreams) { item in
+                VStack(alignment: .leading) {
+                    LivestreamsCard(livestream: item)
+                        .matchedGeometryEffect(id: item.id, in: namespace, isSource: !show)
+                        .frame(height: 350)
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
+                                show.toggle()
+                                selectedItem = item
+                                isDisabled = true
+                            }
+                        }
+                        .disabled(isDisabled)
+                }
+                .matchedGeometryEffect(id: "container\(item.id)", in: namespace, isSource: !show)
+            }
+        }
     }
     
     // detail view

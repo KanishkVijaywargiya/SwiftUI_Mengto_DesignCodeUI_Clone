@@ -26,6 +26,7 @@
 		04B933F726E7608E00200ABC /* LivestreamsCardRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B933F626E7608E00200ABC /* LivestreamsCardRows.swift */; };
 		04B933F926E760FD00200ABC /* LivestreamSectionDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B933F826E760FD00200ABC /* LivestreamSectionDummyData.swift */; };
 		04B933FB26E77B4400200ABC /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B933FA26E77B4400200ABC /* CloseButton.swift */; };
+		04C6CFEB26E8A92D0000FA25 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6CFEA26E8A92D0000FA25 /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		04B933F626E7608E00200ABC /* LivestreamsCardRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamsCardRows.swift; sourceTree = "<group>"; };
 		04B933F826E760FD00200ABC /* LivestreamSectionDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamSectionDummyData.swift; sourceTree = "<group>"; };
 		04B933FA26E77B4400200ABC /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		04C6CFEA26E8A92D0000FA25 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		047B852726E6632A0059A153 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04C6CFE926E8A91B0000FA25 /* Courses */,
 				04B933F426E74B0800200ABC /* LivestreamsDummyData.swift */,
 				04B933F826E760FD00200ABC /* LivestreamSectionDummyData.swift */,
 			);
@@ -152,6 +155,14 @@
 				047B853E26E6A1AD0059A153 /* DarkModeViewModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		04C6CFE926E8A91B0000FA25 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				04C6CFEA26E8A92D0000FA25 /* Course.swift */,
+			);
+			path = Courses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C6CFEB26E8A92D0000FA25 /* Course.swift in Sources */,
 				047B853A26E665F60059A153 /* CoursesCard.swift in Sources */,
 				047B852B26E6633E0059A153 /* Courses.swift in Sources */,
 				047B853F26E6A1AD0059A153 /* DarkModeViewModifier.swift in Sources */,
