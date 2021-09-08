@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
+    @State var showModal = false
     var livestream: LivestreamsDummyData = livestreams[0]
     var namespace: Namespace.ID
     
@@ -64,22 +65,29 @@ struct DetailView: View {
                 
                 Spacer()
             }
-            .matchedGeometryEffect(id: "container\(livestream.id)", in: namespace)
         }
+        .matchedGeometryEffect(id: "container\(livestream.id)", in: namespace)
         .ignoresSafeArea()
     }
     
     // livestream section row
     @ViewBuilder
     var livestreamRow: some View {
-        ForEach(livestreamSection) { item in
-            NavigationLink(destination: Text("Destination")) {
-                LivestreamsCardRows(item: item)
+        VStack {
+            ForEach(livestreamSection) { item in
+                    LivestreamsCardRows(item: item)
+                        .sheet(isPresented: $showModal) {
+                            // TODO: add the screen view
+                            Text("Destination")
+                        }
+                        .onTapGesture {
+                            showModal = true
+                        }
+                Divider()
             }
-            Divider()
+            .padding(.horizontal, 20)
+            .padding(.vertical, 8)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 8)
     }
     
     // custom background image
