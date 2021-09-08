@@ -10,25 +10,25 @@ import SwiftUI
 struct LearnNow: View {
     @State var show = false
     @State var isDisabled = false
+    @State var selectedIndex = 0
     @State var selectedItem: LivestreamsDummyData? = nil
-    
     var livestream: LivestreamsDummyData = livestreams[0]
-    
     @Namespace var namespace
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
         ZStack {
-            content4
+            if horizontalSizeClass == .compact {
+                tabBar
+            }
             fullContent
                 .background(BlurView(style: .systemMaterial).edgesIgnoringSafeArea(.all))
-                .ignoresSafeArea()
         }
-        .navigationBarTitle(Text("Learn Swift"))
     }
     
     // livestream contents
     @ViewBuilder
-    var content4: some View {
+    var content: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 0) {
                 Text("Recent livestreams")
@@ -56,6 +56,7 @@ struct LearnNow: View {
                 }
             }
         }
+        .navigationTitle("Learn Swift")
     }
     
     // detail view
@@ -66,11 +67,10 @@ struct LearnNow: View {
                 DetailView(livestream: selectedItem!, namespace: namespace)
                 
                 #if os(iOS)
-                    CLosedButton
-                        .padding(.top, 50)
-                        .padding(.trailing, 16)
+                closedButton
+                    .padding(.trailing, 16)
                 #else
-                CLosedButton
+                closedButton
                     .padding()
                 #endif
             }
@@ -80,9 +80,55 @@ struct LearnNow: View {
         }
     }
     
+    // tab bar
+    var tabBar: some View {
+        TabView {
+            NavigationView {
+                content
+            }
+            .tabItem {
+                Image(systemName: "house")
+                Text("Learn Now")
+            }.tag(0)
+            
+            NavigationView {
+                Courses()
+            }
+            .tabItem {
+                Image(systemName: "square.grid.2x2")
+                Text("Courses")
+            }.tag(1)
+            
+            NavigationView {
+                Tutorials()
+            }
+            .tabItem {
+                Image(systemName: "square.stack.3d.down.right")
+                Text("Tutorials")
+            }.tag(2)
+            
+            NavigationView {
+                Livestreams()
+            }
+            .tabItem {
+                Image(systemName: "tv")
+                Text("Livestreams")
+            }.tag(3)
+            
+            NavigationView {
+                More()
+            }
+            .tabItem {
+                Image(systemName: "ellipsis.circle")
+                Text("More")
+            }.tag(4)
+        }
+        .accentColor(Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)))
+    }
+    
     // closed button
     @ViewBuilder
-    var CLosedButton: some View {
+    var closedButton: some View {
         CloseButton()
             .onTapGesture {
                 withAnimation(.spring()) {
@@ -101,3 +147,4 @@ struct LearnNow_Previews: PreviewProvider {
         LearnNow()
     }
 }
+

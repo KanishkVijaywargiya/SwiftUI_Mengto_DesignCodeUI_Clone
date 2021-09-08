@@ -25,7 +25,7 @@ struct DetailView: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 40)
                         .padding(.bottom, 8)
-                        
+                    
                     HStack {
                         Text(livestream.subHeadline)
                             .font(.subheadline)
@@ -60,14 +60,26 @@ struct DetailView: View {
                 .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 10)
                 .matchedGeometryEffect(id: "livestream", in: namespace)
                 
-                LivestreamRow()
+                livestreamRow
                 
                 Spacer()
             }
             .matchedGeometryEffect(id: "container\(livestream.id)", in: namespace)
         }
-        .navigationBarHidden(true)
         .ignoresSafeArea()
+    }
+    
+    // livestream section row
+    @ViewBuilder
+    var livestreamRow: some View {
+        ForEach(livestreamSection) { item in
+            NavigationLink(destination: Text("Destination")) {
+                LivestreamsCardRows(item: item)
+            }
+            Divider()
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 8)
     }
     
     // custom background image
@@ -101,17 +113,6 @@ struct DetailView: View {
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .matchedGeometryEffect(id: "footerText", in: namespace)
     }
-}
-
-// livestream section row
-@ViewBuilder
-func LivestreamRow() -> some View {
-    ForEach(livestreamSection) { item in
-        LivestreamsCardRows(item: item)
-        Divider()
-    }
-    .padding(.horizontal, 20)
-    .padding(.vertical, 8)
 }
 
 // custom linear gradient

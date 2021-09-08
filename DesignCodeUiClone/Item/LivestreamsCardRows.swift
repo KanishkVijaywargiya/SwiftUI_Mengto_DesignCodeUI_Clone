@@ -53,6 +53,6 @@ struct LivestreamsCardRows: View {
 
 struct LivestreamsCardRows_Previews: PreviewProvider {
     static var previews: some View {
-        LivestreamsCardRows()
+        LivestreamsCardRows().previewLayout(.sizeThatFits)
     }
 }

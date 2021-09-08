@@ -9,7 +9,10 @@ import SwiftUI
 
 struct Courses: View {
     var body: some View {
-        Text("Courses")
+        VStack {
+            Text("Courses")
+        }
+        .navigationTitle("Courses")
     }
 }
 

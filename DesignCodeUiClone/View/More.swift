@@ -16,6 +16,7 @@ struct More: View {
                 Text("Dark Mode")
             }
         }
+        .navigationTitle("More")
     }
 }
 

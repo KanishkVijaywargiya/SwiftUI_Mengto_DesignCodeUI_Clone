@@ -9,7 +9,10 @@ import SwiftUI
 
 struct Tutorials: View {
     var body: some View {
-        Text("Tutorials")
+        VStack {
+            Text("Tutorials")
+        }
+        .navigationTitle("Tutorials")
     }
 }
 

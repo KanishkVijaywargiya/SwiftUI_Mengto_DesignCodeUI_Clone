@@ -13,7 +13,7 @@ struct CloseButton: View {
             .font(.system(size: 17, weight: .bold))
             .foregroundColor(.white)
             .padding(.all, 10)
-            .background(BlurView(style: .light))
+            .background(BlurView(style: .systemMaterialDark))
             .mask(Circle())
     }
 }

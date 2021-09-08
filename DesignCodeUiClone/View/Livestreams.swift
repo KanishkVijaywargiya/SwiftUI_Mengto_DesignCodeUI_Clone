@@ -9,7 +9,10 @@ import SwiftUI
 
 struct Livestreams: View {
     var body: some View {
+        VStack {
         Text("Livestreams")
+        }
+        .navigationTitle("Livestreams")
     }
 }
 
