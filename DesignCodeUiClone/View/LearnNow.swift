@@ -75,7 +75,7 @@ struct LearnNow: View {
                                 )
                         }
                     }
-                    .frame(width: 280, height: 360)
+                    .frame(width: 280, height: 400)
                 }
             }
             .padding(20)
