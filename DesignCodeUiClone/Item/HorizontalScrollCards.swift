@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HorizontalScrollCards: View {
     var width: CGFloat = 280
-    var height: CGFloat = 400
+    var height: CGFloat = 360
     var scrollCardsData: ScrollCardsDummyData = scrollCardData[0]
     
     var body: some View {
