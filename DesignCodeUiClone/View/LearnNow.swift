@@ -36,10 +36,11 @@ struct LearnNow: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 16)
                 
+                horizontalScrollCards
+                
                 Text("Recent courses")
                     .font(.title).bold()
                     .padding(.horizontal, 20)
-                    .padding(.bottom, 16)
                 
                 courseCards
                 
@@ -57,7 +58,29 @@ struct LearnNow: View {
             }
         }
         .navigationBarHidden(true)
-        //        .navigationTitle("Learn Swift")
+    }
+    
+    // horizontal scroll geometry reader cards
+    @ViewBuilder
+    var horizontalScrollCards: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 20) {
+                ForEach(scrollCardData) { item in
+                    GeometryReader { geo in
+                        NavigationLink(destination: Text("Destination")) {
+                            HorizontalScrollCards(scrollCardsData: item)
+                                .rotation3DEffect(
+                                    Angle(degrees: Double(geo.frame(in: .global).minX - 30) / -getAngleMultiplier(bounds: geo )),
+                                    axis: (x: 0, y: 10, z: 0)
+                                )
+                        }
+                    }
+                    .frame(width: 280, height: 360)
+                }
+            }
+            .padding(20)
+            .padding(.bottom, 18)
+        }
     }
     
     // courses cards
@@ -164,7 +187,7 @@ struct LearnNow: View {
                 Text("More")
             }.tag(4)
         }
-        .accentColor(Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)))
+        .accentColor(Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)))
     }
     
     // closed button
@@ -180,6 +203,15 @@ struct LearnNow: View {
                     }
                 }
             }
+    }
+    
+    // setting angle for horizontal card
+    func getAngleMultiplier(bounds: GeometryProxy) -> Double {
+        if bounds.size.width > 500 {
+            return 80
+        }else {
+            return 20
+        }
     }
 }
 

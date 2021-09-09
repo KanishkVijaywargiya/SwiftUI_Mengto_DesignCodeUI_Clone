@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041BA3E326E9DE8D00DF580D /* HorizontalScrollCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BA3E226E9DE8D00DF580D /* HorizontalScrollCards.swift */; };
+		041BA3E726E9E9E600DF580D /* ScrollCardsDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BA3E626E9E9E600DF580D /* ScrollCardsDummyData.swift */; };
 		047B851526E65D890059A153 /* DesignCodeUiCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B851426E65D890059A153 /* DesignCodeUiCloneApp.swift */; };
 		047B851726E65D890059A153 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B851626E65D890059A153 /* ContentView.swift */; };
 		047B851926E65D8E0059A153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047B851826E65D8E0059A153 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041BA3E226E9DE8D00DF580D /* HorizontalScrollCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollCards.swift; sourceTree = "<group>"; };
+		041BA3E626E9E9E600DF580D /* ScrollCardsDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCardsDummyData.swift; sourceTree = "<group>"; };
 		047B851126E65D890059A153 /* DesignCodeUiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeUiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047B851426E65D890059A153 /* DesignCodeUiCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeUiCloneApp.swift; sourceTree = "<group>"; };
 		047B851626E65D890059A153 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +69,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041BA3E426E9E9A200DF580D /* Livestreams */ = {
+			isa = PBXGroup;
+			children = (
+				04B933F426E74B0800200ABC /* LivestreamsDummyData.swift */,
+				04B933F826E760FD00200ABC /* LivestreamSectionDummyData.swift */,
+			);
+			path = Livestreams;
+			sourceTree = "<group>";
+		};
+		041BA3E526E9E9B500DF580D /* ScrollCardsData */ = {
+			isa = PBXGroup;
+			children = (
+				041BA3E626E9E9E600DF580D /* ScrollCardsDummyData.swift */,
+			);
+			path = ScrollCardsData;
+			sourceTree = "<group>";
+		};
 		047B850826E65D880059A153 = {
 			isa = PBXGroup;
 			children = (
@@ -129,9 +150,9 @@
 		047B852726E6632A0059A153 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				041BA3E526E9E9B500DF580D /* ScrollCardsData */,
+				041BA3E426E9E9A200DF580D /* Livestreams */,
 				04C6CFE926E8A91B0000FA25 /* Courses */,
-				04B933F426E74B0800200ABC /* LivestreamsDummyData.swift */,
-				04B933F826E760FD00200ABC /* LivestreamSectionDummyData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,6 +166,7 @@
 				047B853B26E695DC0059A153 /* BlurView.swift */,
 				04B933F626E7608E00200ABC /* LivestreamsCardRows.swift */,
 				04B933FA26E77B4400200ABC /* CloseButton.swift */,
+				041BA3E226E9DE8D00DF580D /* HorizontalScrollCards.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -237,6 +259,7 @@
 				04C6CFEB26E8A92D0000FA25 /* Course.swift in Sources */,
 				047B853A26E665F60059A153 /* CoursesCard.swift in Sources */,
 				047B852B26E6633E0059A153 /* Courses.swift in Sources */,
+				041BA3E726E9E9E600DF580D /* ScrollCardsDummyData.swift in Sources */,
 				047B853F26E6A1AD0059A153 /* DarkModeViewModifier.swift in Sources */,
 				04B933F926E760FD00200ABC /* LivestreamSectionDummyData.swift in Sources */,
 				04B933F326E73E2700200ABC /* DetailView.swift in Sources */,
@@ -247,6 +270,7 @@
 				047B853C26E695DC0059A153 /* BlurView.swift in Sources */,
 				047B852D26E663450059A153 /* Tutorials.swift in Sources */,
 				04B933FB26E77B4400200ABC /* CloseButton.swift in Sources */,
+				041BA3E326E9DE8D00DF580D /* HorizontalScrollCards.swift in Sources */,
 				047B853826E665E60059A153 /* TutorialsCard.swift in Sources */,
 				047B853626E665DA0059A153 /* LivestreamsCard.swift in Sources */,
 				047B853126E663590059A153 /* More.swift in Sources */,

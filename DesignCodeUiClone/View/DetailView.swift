@@ -9,7 +9,8 @@ import SwiftUI
 
 struct DetailView: View {
     @State var showModal = false
-    @State private var dragOffset = CGSize.zero
+    @State var viewState = CGSize.zero
+    @State var isDragging = false
     
     @State var rotation: Angle = .zero
     
@@ -101,15 +102,18 @@ struct DetailView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(height: 80)
-            .offset(dragOffset)
+            .scaleEffect(isDragging ? 0.9 : 1)
+            .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+            .rotation3DEffect(Angle(degrees: 5), axis: (x: viewState.width, y: viewState.height, z: 0))
             .gesture(
-                DragGesture()
-                    .onChanged { gesture in
-                        dragOffset = gesture.translation
-                    }
-                    .onEnded { gesture in
-                        dragOffset = .zero
-                    }
+                DragGesture().onChanged{value in
+                    self.viewState = value.translation
+                    self.isDragging = true
+                }
+                .onEnded{value in
+                    self.viewState = .zero
+                    self.isDragging = false
+                }
             )
             .padding(.horizontal, 20)
             .matchedGeometryEffect(id: "backimg", in: namespace)
@@ -125,6 +129,7 @@ struct DetailView: View {
                     .padding(.vertical, 12)
                 
                 Text("This is a compilation of the \(courseText) live streams hosted by Meng. Over there he talks and teaches how to use design systems, typography, navigation, iOS 14 Designs.")
+                    .lineLimit(4)
             }
             .font(.subheadline)
             .foregroundColor(.white)
