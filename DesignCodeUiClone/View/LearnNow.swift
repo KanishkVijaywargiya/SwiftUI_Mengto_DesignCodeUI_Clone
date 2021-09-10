@@ -148,6 +148,7 @@ struct LearnNow: View {
             }
         }
         .padding(16)
+        .padding(.bottom, 30)
         .frame(maxWidth: .infinity)
     }
     
@@ -165,6 +166,7 @@ struct LearnNow: View {
             }
         }
         .padding(16)
+        .padding(.bottom, 30)
         .frame(maxWidth: .infinity)
     }
     
