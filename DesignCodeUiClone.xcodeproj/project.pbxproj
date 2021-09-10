@@ -23,6 +23,7 @@
 		047B853A26E665F60059A153 /* CoursesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853926E665F60059A153 /* CoursesCard.swift */; };
 		047B853C26E695DC0059A153 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853B26E695DC0059A153 /* BlurView.swift */; };
 		047B853F26E6A1AD0059A153 /* DarkModeViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B853E26E6A1AD0059A153 /* DarkModeViewModifier.swift */; };
+		04965B9126EB52D200A38CC5 /* TutorialsDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04965B9026EB52D200A38CC5 /* TutorialsDummyData.swift */; };
 		04B933F326E73E2700200ABC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B933F226E73E2700200ABC /* DetailView.swift */; };
 		04B933F526E74B0800200ABC /* LivestreamsDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B933F426E74B0800200ABC /* LivestreamsDummyData.swift */; };
 		04B933F726E7608E00200ABC /* LivestreamsCardRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B933F626E7608E00200ABC /* LivestreamsCardRows.swift */; };
@@ -50,6 +51,7 @@
 		047B853926E665F60059A153 /* CoursesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCard.swift; sourceTree = "<group>"; };
 		047B853B26E695DC0059A153 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		047B853E26E6A1AD0059A153 /* DarkModeViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeViewModifier.swift; sourceTree = "<group>"; };
+		04965B9026EB52D200A38CC5 /* TutorialsDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsDummyData.swift; sourceTree = "<group>"; };
 		04B933F226E73E2700200ABC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		04B933F426E74B0800200ABC /* LivestreamsDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamsDummyData.swift; sourceTree = "<group>"; };
 		04B933F626E7608E00200ABC /* LivestreamsCardRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivestreamsCardRows.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		047B852726E6632A0059A153 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				04965B8F26EB524300A38CC5 /* Tutorials */,
 				041BA3E526E9E9B500DF580D /* ScrollCardsData */,
 				041BA3E426E9E9A200DF580D /* Livestreams */,
 				04C6CFE926E8A91B0000FA25 /* Courses */,
@@ -177,6 +180,14 @@
 				047B853E26E6A1AD0059A153 /* DarkModeViewModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		04965B8F26EB524300A38CC5 /* Tutorials */ = {
+			isa = PBXGroup;
+			children = (
+				04965B9026EB52D200A38CC5 /* TutorialsDummyData.swift */,
+			);
+			path = Tutorials;
 			sourceTree = "<group>";
 		};
 		04C6CFE926E8A91B0000FA25 /* Courses */ = {
@@ -264,6 +275,7 @@
 				04B933F926E760FD00200ABC /* LivestreamSectionDummyData.swift in Sources */,
 				04B933F326E73E2700200ABC /* DetailView.swift in Sources */,
 				047B852F26E663510059A153 /* Livestreams.swift in Sources */,
+				04965B9126EB52D200A38CC5 /* TutorialsDummyData.swift in Sources */,
 				04B933F526E74B0800200ABC /* LivestreamsDummyData.swift in Sources */,
 				047B851726E65D890059A153 /* ContentView.swift in Sources */,
 				04B933F726E7608E00200ABC /* LivestreamsCardRows.swift in Sources */,

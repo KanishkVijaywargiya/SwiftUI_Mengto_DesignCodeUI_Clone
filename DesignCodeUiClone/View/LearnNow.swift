@@ -31,10 +31,59 @@ struct LearnNow: View {
     var content: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Learn Design")
-                    .font(.largeTitle).bold()
+                Text(Date(), style: .date)
+                    .padding(.top)
                     .padding(.horizontal, 20)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 8)
+                
+                HStack(spacing: 0) {
+                    Text("Learn Swift")
+                        .font(.largeTitle).bold()
+                        .padding(.horizontal, 20)
+                        .padding(.bottom, 16)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "magnifyingglass")
+                        .renderingMode(.template)
+                        .font(.system(size: 16))
+                        .foregroundColor(.primary)
+                        .padding(8)
+                        .background(
+                            BlurView(style: .light)
+                        )
+                        .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), lineWidth: 0.2)
+                        )
+                    
+                    ZStack {
+                        Circle()
+                            .frame(width: 45, height: 45)
+                            .foregroundColor(.black.opacity(0.1))
+                            .background(
+                                LinearGradient(grad1: Color(#colorLiteral(red: 1, green: 0, blue: 0.5176470588, alpha: 1)), grad2: Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)), grad3: Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)))
+                            )
+                            .clipShape(Circle())
+                            .offset(x: 10, y: -20)
+                        
+                        Image(systemName: "person.crop.circle")
+                            .renderingMode(.template)
+                            .font(.system(size: 20))
+                            .foregroundColor(.primary)
+                            .padding(12)
+                            .padding(.horizontal, 20)
+                            .background(
+                                BlurView(style: .light)
+                            )
+                            .clipShape(Circle())
+                            .overlay(
+                                Circle()
+                                    .stroke(Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), lineWidth: 0.2)
+                        )
+                    }
+                }
                 
                 horizontalScrollCards
                 
@@ -48,6 +97,8 @@ struct LearnNow: View {
                     .font(.title).bold()
                     .padding(.horizontal, 20)
                     .padding(.bottom, 16)
+                
+                tutorialCards
                 
                 Text("Recent livestreams")
                     .font(.title).bold()
@@ -79,7 +130,7 @@ struct LearnNow: View {
                 }
             }
             .padding(20)
-            .padding(.bottom, 18)
+            .padding(.bottom, 30)
         }
     }
     
@@ -91,6 +142,23 @@ struct LearnNow: View {
                 VStack {
                     NavigationLink(destination: Text("Destination")) {
                         CoursesCard(course: item)
+                            .frame(height: 250)
+                    }
+                }
+            }
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity)
+    }
+    
+    // tutorials cards
+    @ViewBuilder
+    var tutorialCards: some View {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 180), spacing: 16)], spacing: 16) {
+            ForEach(TutorialDummyData.tutorials) { item in
+                VStack {
+                    NavigationLink(destination: Text("Destination")) {
+                        TutorialsCard(tutorial: item)
                             .frame(height: 250)
                     }
                 }
