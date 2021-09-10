@@ -49,9 +49,9 @@ struct TutorialsCard: View {
             Text(tutorial.description)
                 .font(.subheadline)
                 .foregroundColor(.white)
-                .padding(.top, 20)
+                .padding(.top, 4)
                 .padding(.bottom, 20)
-                .lineLimit(2)
+                .lineLimit(3)
         }
         .padding(.all)
         .background(
