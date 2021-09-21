@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct Livestreams: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var show = false
-    @State var isDisabled = false
-    @State var selectedIndex = 0
-    @State var selectedItem: LivestreamsDummyData? = nil
-    @Namespace var namespace
+    @State var showSheet = false
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -84,20 +83,12 @@ struct Livestreams: View {
     var livestreamContent: some View {
         LazyVStack {
             ForEach(livestreams) { item in
-                VStack(alignment: .leading) {
-                    LivestreamsCard(livestream: item)
-                        .matchedGeometryEffect(id: item.id, in: namespace, isSource: !show)
-                        .frame(height: 350)
-                        .onTapGesture {
-                            withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
-                                show.toggle()
-                                selectedItem = item
-                                isDisabled = true
-                            }
-                        }
-                        .disabled(isDisabled)
+                NavigationLink(destination: NewLivestreamDetailView()) {
+                    VStack(alignment: .leading) {
+                        LivestreamsCard(livestream: item)
+                            .frame(height: 350)
+                    }
                 }
-                .matchedGeometryEffect(id: "container\(item.id)", in: namespace, isSource: !show)
             }
         }
         .padding(.bottom)
@@ -113,11 +104,26 @@ struct Livestreams: View {
             
             ForEach(livestreamSection) { item in
                 LivestreamsCardRows(item: item)
+                    .fullScreenCover(isPresented: $showSheet) {
+                        LivestreamsDetailView()
+                    }
+                    .onTapGesture {
+                        showSheet = true
+                    }
                 Divider()
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
         }
+    }
+    
+    // closed button
+    @ViewBuilder
+    var closedButton: some View {
+        CloseButton()
+            .onTapGesture {
+                presentationMode.wrappedValue.dismiss()
+            }
     }
 }
 

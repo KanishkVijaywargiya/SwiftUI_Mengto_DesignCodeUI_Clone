@@ -27,6 +27,7 @@
 		0482DDAC26F9B90100342C29 /* DetailResourcesContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482DDAB26F9B90100342C29 /* DetailResourcesContent.swift */; };
 		0482DDAE26F9EB4C00342C29 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482DDAD26F9EB4C00342C29 /* WebView.swift */; };
 		0482DDB026FA21C300342C29 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482DDAF26FA21C300342C29 /* SafariView.swift */; };
+		0482DDB226FA51A700342C29 /* NewLivestreamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0482DDB126FA51A700342C29 /* NewLivestreamDetailView.swift */; };
 		04965B9126EB52D200A38CC5 /* TutorialsDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04965B9026EB52D200A38CC5 /* TutorialsDummyData.swift */; };
 		04965B9326EBA70A00A38CC5 /* TriggerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04965B9226EBA70A00A38CC5 /* TriggerButton.swift */; };
 		04B933F326E73E2700200ABC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B933F226E73E2700200ABC /* DetailView.swift */; };
@@ -60,6 +61,7 @@
 		0482DDAB26F9B90100342C29 /* DetailResourcesContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResourcesContent.swift; sourceTree = "<group>"; };
 		0482DDAD26F9EB4C00342C29 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		0482DDAF26FA21C300342C29 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		0482DDB126FA51A700342C29 /* NewLivestreamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLivestreamDetailView.swift; sourceTree = "<group>"; };
 		04965B9026EB52D200A38CC5 /* TutorialsDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsDummyData.swift; sourceTree = "<group>"; };
 		04965B9226EBA70A00A38CC5 /* TriggerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerButton.swift; sourceTree = "<group>"; };
 		04B933F226E73E2700200ABC /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				047B853026E663590059A153 /* More.swift */,
 				04B933F226E73E2700200ABC /* DetailView.swift */,
 				0482DDA926F9AE5900342C29 /* LivestreamsDetailView.swift */,
+				0482DDB126FA51A700342C29 /* NewLivestreamDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				047B852D26E663450059A153 /* Tutorials.swift in Sources */,
 				04B933FB26E77B4400200ABC /* CloseButton.swift in Sources */,
 				0482DDAC26F9B90100342C29 /* DetailResourcesContent.swift in Sources */,
+				0482DDB226FA51A700342C29 /* NewLivestreamDetailView.swift in Sources */,
 				041BA3E326E9DE8D00DF580D /* HorizontalScrollCards.swift in Sources */,
 				047B853826E665E60059A153 /* TutorialsCard.swift in Sources */,
 				047B853626E665DA0059A153 /* LivestreamsCard.swift in Sources */,

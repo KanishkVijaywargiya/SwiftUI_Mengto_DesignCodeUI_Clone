@@ -8,71 +8,83 @@
 import SwiftUI
 
 struct DetailView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var showModal = false
     @State var viewState = CGSize.zero
     @State var isDragging = false
-    
     @State var rotation: Angle = .zero
     
     var livestream: LivestreamsDummyData = livestreams[0]
     var namespace: Namespace.ID
     
     var body: some View {
-        VStack(spacing: 16) {
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 0) {
-                    Text(livestream.title)
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(.white)
-                        .matchedGeometryEffect(id: "title", in: namespace)
-                        .frame(maxWidth: 200, alignment: .leading)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 16)
-                        .padding(.top, 40)
-                        .padding(.bottom, 8)
-                    
-                    HStack {
-                        Text(livestream.subHeadline)
-                            .font(.subheadline)
+        ZStack(alignment: .topTrailing) {
+            VStack(spacing: 16) {
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 0) {
+                        Text(livestream.title)
+                            .font(.largeTitle)
+                            .bold()
                             .foregroundColor(.white)
-                            .matchedGeometryEffect(id: "subHeadline", in: namespace)
+                            .matchedGeometryEffect(id: "title", in: namespace)
+                            .frame(maxWidth: 200, alignment: .leading)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 20)
-                            .padding(.bottom, 20)
+                            .padding(.horizontal, 16)
+                            .padding(.top, 40)
+                            .padding(.bottom, 8)
                         
-                        VStack(spacing: 8) {
-                            Image(livestream.courseLogo)
-                                .resizable().frame(width: 35, height: 35)
-                                .matchedGeometryEffect(id: "courseLogo", in: namespace)
-                            Image(uiImage: #imageLiteral(resourceName: "mengto"))
-                                .resizable()
-                                .matchedGeometryEffect(id: "uiImage", in: namespace)
-                                .frame(width: 35, height: 35)
-                                .clipShape(Circle())
+                        HStack {
+                            Text(livestream.subHeadline)
+                                .font(.subheadline)
+                                .foregroundColor(.white)
+                                .matchedGeometryEffect(id: "subHeadline", in: namespace)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 20)
+                                .padding(.bottom, 20)
+                            
+                            VStack(spacing: 8) {
+                                Image(livestream.courseLogo)
+                                    .resizable().frame(width: 35, height: 35)
+                                    .matchedGeometryEffect(id: "courseLogo", in: namespace)
+                                Image(uiImage: #imageLiteral(resourceName: "mengto"))
+                                    .resizable()
+                                    .matchedGeometryEffect(id: "uiImage", in: namespace)
+                                    .frame(width: 35, height: 35)
+                                    .clipShape(Circle())
+                            }
+                            .padding(.trailing, 16)
                         }
-                        .padding(.trailing, 16)
+                        
+                        Spacer()
+                        
+                        BackImage2(backImg: livestream.backgroundImg)
+                        
+                        FootText2(courseText: livestream.footerText)
                     }
+                    .frame(height: 500)
+                    .background( LinearGradient2(grad1: livestream.gradient1, grad2: livestream.gradient2, grad3: livestream.gradient3) )
+                    .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                    .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 10)
+                    .matchedGeometryEffect(id: "livestream", in: namespace)
+                    
+                    livestreamRow
                     
                     Spacer()
-                    
-                    BackImage2(backImg: livestream.backgroundImg)
-                    
-                    FootText2(courseText: livestream.footerText)
                 }
-                .frame(height: 500)
-                .background( LinearGradient2(grad1: livestream.gradient1, grad2: livestream.gradient2, grad3: livestream.gradient3) )
-                .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-                .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 10)
-                .matchedGeometryEffect(id: "livestream", in: namespace)
-                
-                livestreamRow
-                
-                Spacer()
             }
+            .matchedGeometryEffect(id: "container\(livestream.id)", in: namespace)
+            .navigationBarHidden(true)
+            .ignoresSafeArea()
+            
+            #if os(iOS)
+            closedButton
+                .padding(.trailing, 16)
+            #else
+            closedButton
+                .padding()
+            #endif
         }
-        .matchedGeometryEffect(id: "container\(livestream.id)", in: namespace)
-        .ignoresSafeArea()
     }
     
     // livestream section row
@@ -82,7 +94,7 @@ struct DetailView: View {
             ForEach(livestreamSection) { item in
                 LivestreamsCardRows(item: item)
                     .fullScreenCover(isPresented: $showModal) {
-                        LivestreamsDetailView(namespace: namespace)
+                        LivestreamsDetailView()
                     }
                     .onTapGesture {
                         showModal = true
@@ -92,6 +104,7 @@ struct DetailView: View {
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
         }
+        .padding(.bottom, 32)
     }
     
     // custom background image
@@ -139,6 +152,16 @@ struct DetailView: View {
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
         .matchedGeometryEffect(id: "footerText", in: namespace)
     }
+    
+    // closed button
+    @ViewBuilder
+    var closedButton: some View {
+        CloseButton()
+            .onTapGesture {
+                presentationMode.wrappedValue.dismiss()
+            }
+    }
+    
 }
 
 // custom linear gradient

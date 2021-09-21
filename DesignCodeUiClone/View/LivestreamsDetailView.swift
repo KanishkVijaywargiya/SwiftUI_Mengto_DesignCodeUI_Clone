@@ -11,7 +11,6 @@ struct LivestreamsDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var livestreamsSection: LivestreamSectionDummyData = livestreamSection[0]
-    var namespace: Namespace.ID
     
     @State var viewState = CGSize.zero
     @State var isDragging = false
@@ -35,7 +34,6 @@ struct LivestreamsDetailView: View {
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundColor(.white)
-                                .matchedGeometryEffect(id: "title", in: namespace)
                                 .frame(maxWidth: 200, alignment: .leading)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.horizontal, 16)
@@ -44,12 +42,10 @@ struct LivestreamsDetailView: View {
                             VStack(spacing: 8) {
                                 Image("penlogo")
                                     .resizable()
-                                    .matchedGeometryEffect(id: "penimage", in: namespace)
                                     .frame(width: 35, height: 35)
                                 
                                 Image(uiImage: #imageLiteral(resourceName: "mengto"))
                                     .resizable()
-                                    .matchedGeometryEffect(id: "uiImage", in: namespace)
                                     .frame(width: 35, height: 35)
                                     .clipShape(Circle())
                             }
@@ -66,11 +62,11 @@ struct LivestreamsDetailView: View {
                     .background( LinearGradient2(grad1: livestreamsSection.gradient1, grad2: livestreamsSection.gradient2, grad3: livestreamsSection.gradient3) )
                     .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                     .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 10)
-                    .matchedGeometryEffect(id: "livestream", in: namespace)
                     
                     DetailResourcesContent()
                 }
             }
+            .padding(.bottom)
             
             #if os(iOS)
             closedButton
@@ -81,6 +77,7 @@ struct LivestreamsDetailView: View {
                 .padding()
             #endif
         }
+        .navigationBarHidden(true)
         .ignoresSafeArea()
     }
     
@@ -105,7 +102,6 @@ struct LivestreamsDetailView: View {
                 }
             )
             .padding(.horizontal, 20)
-            .matchedGeometryEffect(id: "backimg", in: namespace)
             .padding(.bottom, 30)
     }
     
@@ -130,7 +126,6 @@ struct LivestreamsDetailView: View {
         .padding(12)
         .background(BlurView(style: .light))
         .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
-        .matchedGeometryEffect(id: "footerText", in: namespace)
     }
     
     // closed button
@@ -144,8 +139,7 @@ struct LivestreamsDetailView: View {
 }
 
 struct LivestreamsDetailView_Previews: PreviewProvider {
-    @Namespace static var namespace
     static var previews: some View {
-        LivestreamsDetailView(namespace: namespace)
+        LivestreamsDetailView()
     }
 }
