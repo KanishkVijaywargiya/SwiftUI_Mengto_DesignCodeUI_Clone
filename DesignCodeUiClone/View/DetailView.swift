@@ -20,7 +20,7 @@ struct DetailView: View {
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            VStack(spacing: 16) {
+            VStack(alignment: .leading, spacing: 0) {
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 0) {
                         Text(livestream.title)
@@ -31,8 +31,6 @@ struct DetailView: View {
                             .frame(maxWidth: 200, alignment: .leading)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal, 16)
-                            .padding(.top, 40)
-                            .padding(.bottom, 8)
                         
                         HStack {
                             Text(livestream.subHeadline)
@@ -41,7 +39,7 @@ struct DetailView: View {
                                 .matchedGeometryEffect(id: "subHeadline", in: namespace)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.horizontal, 20)
-                                .padding(.bottom, 20)
+                                .padding(.bottom, 10)
                             
                             VStack(spacing: 8) {
                                 Image(livestream.courseLogo)
@@ -56,21 +54,16 @@ struct DetailView: View {
                             .padding(.trailing, 16)
                         }
                         
-                        Spacer()
-                        
                         BackImage2(backImg: livestream.backgroundImg)
-                        
                         FootText2(courseText: livestream.footerText)
                     }
-                    .frame(height: 500)
+                    .padding(.top, 50)
                     .background( LinearGradient2(grad1: livestream.gradient1, grad2: livestream.gradient2, grad3: livestream.gradient3) )
                     .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                     .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 10)
                     .matchedGeometryEffect(id: "livestream", in: namespace)
                     
                     livestreamRow
-                    
-                    Spacer()
                 }
             }
             .matchedGeometryEffect(id: "container\(livestream.id)", in: namespace)
@@ -112,8 +105,8 @@ struct DetailView: View {
     func BackImage2(backImg: UIImage) -> some View {
         Image(uiImage: backImg)
             .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(height: 80)
+            .aspectRatio(contentMode: .fit)
+            .frame(height: 250)
             .scaleEffect(isDragging ? 0.9 : 1)
             .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
             .rotation3DEffect(Angle(degrees: 5), axis: (x: viewState.width, y: viewState.height, z: 0))
@@ -127,7 +120,7 @@ struct DetailView: View {
                     self.isDragging = false
                 }
             )
-            .padding(.horizontal, 20)
+//            .padding(.horizontal, 20)
             .matchedGeometryEffect(id: "backimg", in: namespace)
     }
     
@@ -138,7 +131,7 @@ struct DetailView: View {
             VStack(alignment: .center, spacing: 4) {
                 Text("Taught by Meng To".uppercased())
                     .font(.headline).bold()
-                    .padding(.vertical, 12)
+                    .padding(.bottom, 8)
                 
                 Text("This is a compilation of the \(courseText) live streams hosted by Meng. Over there he talks and teaches how to use design systems, typography, navigation, iOS 14 Designs.")
                     .lineLimit(4)
@@ -161,7 +154,6 @@ struct DetailView: View {
                 presentationMode.wrappedValue.dismiss()
             }
     }
-    
 }
 
 // custom linear gradient
