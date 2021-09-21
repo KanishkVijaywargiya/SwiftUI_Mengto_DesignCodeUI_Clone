@@ -12,6 +12,7 @@ struct LearnNow: View {
     @State var isDisabled = false
     @State var selectedIndex = 0
     @State var selectedItem: LivestreamsDummyData? = nil
+    
     var livestream: LivestreamsDummyData = livestreams[0]
     @Namespace var namespace
     @Environment(\.horizontalSizeClass) var horizontalSizeClass

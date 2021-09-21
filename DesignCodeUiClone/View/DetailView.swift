@@ -81,9 +81,8 @@ struct DetailView: View {
         VStack {
             ForEach(livestreamSection) { item in
                 LivestreamsCardRows(item: item)
-                    .sheet(isPresented: $showModal) {
-                        // TODO: add the screen view
-                        Text("Destination")
+                    .fullScreenCover(isPresented: $showModal) {
+                        LivestreamsDetailView(namespace: namespace)
                     }
                     .onTapGesture {
                         showModal = true
