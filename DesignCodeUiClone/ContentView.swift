@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedIndex = 0
-    
     var body: some View {
         LearnNow()
-//        MainTabView(selectedIndex: $selectedIndex)
     }
 }
 
@@ -21,3 +18,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

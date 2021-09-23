@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import AwesomeToast
 
 struct LivestreamsDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    var videoLink = "https://p73.f4.n0.cdn.getcloudapp.com/items/yAuyqeRn/f737c6e7-c7de-4ab2-a51d-95386b8558d3.mp4"
+    
     var livestreamsSection: LivestreamSectionDummyData = livestreamSection[0]
     
+    @State var showToast = false
+    @State var showVideoModal = false
     @State var viewState = CGSize.zero
     @State var isDragging = false
     @State var rotation: Angle = .zero
@@ -65,8 +70,8 @@ struct LivestreamsDetailView: View {
                     
                     DetailResourcesContent()
                 }
+                .showToast(title: "video not available", isPresented: $showToast)
             }
-            .padding(.bottom)
             
             #if os(iOS)
             closedButton
@@ -84,31 +89,47 @@ struct LivestreamsDetailView: View {
     // custom background image
     @ViewBuilder
     func BackImage2(backImg: UIImage) -> some View {
-        Image(uiImage: backImg)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(height: 200)
-            .scaleEffect(isDragging ? 0.9 : 1)
-            .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-            .rotation3DEffect(Angle(degrees: 5), axis: (x: viewState.width, y: viewState.height, z: 0))
-            .gesture(
-                DragGesture().onChanged{value in
-                    self.viewState = value.translation
-                    self.isDragging = true
-                }
-                .onEnded{value in
-                    self.viewState = .zero
-                    self.isDragging = false
-                }
-            )
-            .padding(.horizontal, 20)
-            .padding(.bottom, 30)
+        ZStack(alignment: .top) {
+            Image(uiImage: backImg)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 200)
+                .scaleEffect(isDragging ? 0.9 : 1)
+                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+                .rotation3DEffect(Angle(degrees: 5), axis: (x: viewState.width, y: viewState.height, z: 0))
+                .gesture(
+                    DragGesture().onChanged{value in
+                        self.viewState = value.translation
+                        self.isDragging = true
+                    }
+                    .onEnded{value in
+                        self.viewState = .zero
+                        self.isDragging = false
+                    }
+                )
+                .padding(.horizontal, 20)
+                .overlay(
+                    PlayButton()
+                        .fullScreenCover(isPresented: $showVideoModal) {
+                            PlayerView(link: URL(string: videoLink)!)
+                        }
+                        .onTapGesture {
+                            if (videoLink.isEmpty) {
+                                showToast.toggle()
+                            } else {
+                                showVideoModal.toggle()
+                            }
+                        }
+//                        .allowsHitTesting(videoLink.isEmpty ? false : true)
+                        .padding(.bottom, 120)
+                )
+        }
     }
     
     // foot text
     @ViewBuilder
     func FootText2(courseText: String) -> some View {
-        HStack {
+        VStack {
             VStack(alignment: .center, spacing: 4) {
                 Text("Taught by Meng To".uppercased())
                     .font(.headline).bold()

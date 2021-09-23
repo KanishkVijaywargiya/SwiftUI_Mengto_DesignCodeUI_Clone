@@ -424,7 +424,7 @@ struct DetailResourcesContent: View {
                             SafariView(url:URL(string: "http://www.instagram.com/mengto")!)
                         }
                     }
-                }.padding(.bottom, 30)
+                }
             }
             .padding()
         }

@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		041BA3E326E9DE8D00DF580D /* HorizontalScrollCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BA3E226E9DE8D00DF580D /* HorizontalScrollCards.swift */; };
 		041BA3E726E9E9E600DF580D /* ScrollCardsDummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041BA3E626E9E9E600DF580D /* ScrollCardsDummyData.swift */; };
+		044C089926FC9D9A00114753 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C089826FC9D9A00114753 /* VideoPlayer.swift */; };
+		044C089B26FCA0A000114753 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C089A26FCA0A000114753 /* PlayerView.swift */; };
+		044C089D26FCAFA900114753 /* PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C089C26FCAFA900114753 /* PlayButton.swift */; };
+		044C08A026FCD95600114753 /* AwesomeToast in Frameworks */ = {isa = PBXBuildFile; productRef = 044C089F26FCD95600114753 /* AwesomeToast */; };
+		044C08A226FCDFE400114753 /* OrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044C08A126FCDFE400114753 /* OrientationView.swift */; };
 		047B851526E65D890059A153 /* DesignCodeUiCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B851426E65D890059A153 /* DesignCodeUiCloneApp.swift */; };
 		047B851726E65D890059A153 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B851626E65D890059A153 /* ContentView.swift */; };
 		047B851926E65D8E0059A153 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 047B851826E65D8E0059A153 /* Assets.xcassets */; };
@@ -41,6 +46,10 @@
 /* Begin PBXFileReference section */
 		041BA3E226E9DE8D00DF580D /* HorizontalScrollCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollCards.swift; sourceTree = "<group>"; };
 		041BA3E626E9E9E600DF580D /* ScrollCardsDummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollCardsDummyData.swift; sourceTree = "<group>"; };
+		044C089826FC9D9A00114753 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
+		044C089A26FCA0A000114753 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		044C089C26FCAFA900114753 /* PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButton.swift; sourceTree = "<group>"; };
+		044C08A126FCDFE400114753 /* OrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationView.swift; sourceTree = "<group>"; };
 		047B851126E65D890059A153 /* DesignCodeUiClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeUiClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		047B851426E65D890059A153 /* DesignCodeUiCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeUiCloneApp.swift; sourceTree = "<group>"; };
 		047B851626E65D890059A153 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044C08A026FCD95600114753 /* AwesomeToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +196,8 @@
 				041BA3E226E9DE8D00DF580D /* HorizontalScrollCards.swift */,
 				04965B9226EBA70A00A38CC5 /* TriggerButton.swift */,
 				0482DDAB26F9B90100342C29 /* DetailResourcesContent.swift */,
+				044C089A26FCA0A000114753 /* PlayerView.swift */,
+				044C089C26FCAFA900114753 /* PlayButton.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -196,6 +208,8 @@
 				047B853E26E6A1AD0059A153 /* DarkModeViewModifier.swift */,
 				0482DDAD26F9EB4C00342C29 /* WebView.swift */,
 				0482DDAF26FA21C300342C29 /* SafariView.swift */,
+				044C089826FC9D9A00114753 /* VideoPlayer.swift */,
+				044C08A126FCDFE400114753 /* OrientationView.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -232,6 +246,9 @@
 			dependencies = (
 			);
 			name = DesignCodeUiClone;
+			packageProductDependencies = (
+				044C089F26FCD95600114753 /* AwesomeToast */,
+			);
 			productName = DesignCodeUiClone;
 			productReference = 047B851126E65D890059A153 /* DesignCodeUiClone.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +276,9 @@
 				Base,
 			);
 			mainGroup = 047B850826E65D880059A153;
+			packageReferences = (
+				044C089E26FCD95600114753 /* XCRemoteSwiftPackageReference "AwesomeToastPackage" */,
+			);
 			productRefGroup = 047B851226E65D890059A153 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044C089926FC9D9A00114753 /* VideoPlayer.swift in Sources */,
 				04C6CFEB26E8A92D0000FA25 /* Course.swift in Sources */,
 				047B853A26E665F60059A153 /* CoursesCard.swift in Sources */,
 				0482DDB026FA21C300342C29 /* SafariView.swift in Sources */,
@@ -293,7 +314,9 @@
 				0482DDAA26F9AE5900342C29 /* LivestreamsDetailView.swift in Sources */,
 				047B853F26E6A1AD0059A153 /* DarkModeViewModifier.swift in Sources */,
 				04B933F926E760FD00200ABC /* LivestreamSectionDummyData.swift in Sources */,
+				044C089B26FCA0A000114753 /* PlayerView.swift in Sources */,
 				04B933F326E73E2700200ABC /* DetailView.swift in Sources */,
+				044C089D26FCAFA900114753 /* PlayButton.swift in Sources */,
 				047B852F26E663510059A153 /* Livestreams.swift in Sources */,
 				04965B9126EB52D200A38CC5 /* TutorialsDummyData.swift in Sources */,
 				04B933F526E74B0800200ABC /* LivestreamsDummyData.swift in Sources */,
@@ -305,6 +328,7 @@
 				04B933FB26E77B4400200ABC /* CloseButton.swift in Sources */,
 				0482DDAC26F9B90100342C29 /* DetailResourcesContent.swift in Sources */,
 				0482DDB226FA51A700342C29 /* NewLivestreamDetailView.swift in Sources */,
+				044C08A226FCDFE400114753 /* OrientationView.swift in Sources */,
 				041BA3E326E9DE8D00DF580D /* HorizontalScrollCards.swift in Sources */,
 				047B853826E665E60059A153 /* TutorialsCard.swift in Sources */,
 				047B853626E665DA0059A153 /* LivestreamsCard.swift in Sources */,
@@ -500,6 +524,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		044C089E26FCD95600114753 /* XCRemoteSwiftPackageReference "AwesomeToastPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/manasdevslopes/AwesomeToastPackage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		044C089F26FCD95600114753 /* AwesomeToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 044C089E26FCD95600114753 /* XCRemoteSwiftPackageReference "AwesomeToastPackage" */;
+			productName = AwesomeToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 047B850926E65D890059A153 /* Project object */;
 }
