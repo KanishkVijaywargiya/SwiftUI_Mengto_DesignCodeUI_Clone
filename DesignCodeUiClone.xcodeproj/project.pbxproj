@@ -167,8 +167,8 @@
 				047B852E26E663510059A153 /* Livestreams.swift */,
 				047B853026E663590059A153 /* More.swift */,
 				04B933F226E73E2700200ABC /* DetailView.swift */,
-				0482DDA926F9AE5900342C29 /* LivestreamsDetailView.swift */,
 				0482DDB126FA51A700342C29 /* NewLivestreamDetailView.swift */,
+				0482DDA926F9AE5900342C29 /* LivestreamsDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
