@@ -12,7 +12,6 @@ struct LivestreamsDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var videoLink = "https://p73.f4.n0.cdn.getcloudapp.com/items/yAuyqeRn/f737c6e7-c7de-4ab2-a51d-95386b8558d3.mp4"
-    
     var livestreamsSection: LivestreamSectionDummyData = livestreamSection[0]
     
     @State var showToast = false
