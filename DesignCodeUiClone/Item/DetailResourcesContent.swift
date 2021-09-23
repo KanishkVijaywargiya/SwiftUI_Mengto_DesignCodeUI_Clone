@@ -48,7 +48,7 @@ struct DetailResourcesContent: View {
                         .padding(.bottom, 12)
                     
                     HStack {
-                        Image(systemName: "paintpalette")
+                        Image(systemName: "sun.min")
                             .renderingMode(.template)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -70,7 +70,7 @@ struct DetailResourcesContent: View {
                     }
                     
                     HStack {
-                        Image(systemName: "paintpalette")
+                        Image(systemName: "sun.min")
                             .renderingMode(.template)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -88,7 +88,7 @@ struct DetailResourcesContent: View {
                     }
                     
                     HStack {
-                        Image(systemName: "paintpalette")
+                        Image(systemName: "sun.min")
                             .renderingMode(.template)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -107,7 +107,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "sun.min")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -127,7 +127,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "flame")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -147,7 +147,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "flame")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -167,7 +167,7 @@ struct DetailResourcesContent: View {
                     .frame(height: 70)
                     
                     HStack {
-                        Image(systemName: "paintpalette")
+                        Image(systemName: "wand.and.stars")
                             .renderingMode(.template)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -186,7 +186,7 @@ struct DetailResourcesContent: View {
                     }
                     
                     HStack {
-                        Image(systemName: "paintpalette")
+                        Image(systemName: "iphone")
                             .renderingMode(.template)
                             .font(.system(size: 18, weight: .bold))
                             .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -213,7 +213,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0)  {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "paintbrush.pointed")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -253,7 +253,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0)  {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "greetingcard")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -273,7 +273,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0) {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "greetingcard")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -300,7 +300,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0)  {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "swift")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -320,7 +320,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0)  {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "swift")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -340,7 +340,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0)  {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "greetingcard")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -367,7 +367,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0)  {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "ellipsis.bubble")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -387,7 +387,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0)  {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "paperplane")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
@@ -407,7 +407,7 @@ struct DetailResourcesContent: View {
                     
                     VStack(alignment: .leading, spacing: 0)  {
                         HStack {
-                            Image(systemName: "paintpalette")
+                            Image(systemName: "circle.square")
                                 .renderingMode(.template)
                                 .font(.system(size: 18, weight: .bold))
                                 .foregroundColor(Color(#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)))
