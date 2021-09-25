@@ -184,7 +184,7 @@ struct LearnNow: View {
                             withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
                                 show.toggle()
                                 selectedItem = item
-                                isDisabled = true
+//                                isDisabled = true
                             }
                         }
                         .disabled(isDisabled)
