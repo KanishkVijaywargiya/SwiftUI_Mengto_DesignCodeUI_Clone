@@ -35,11 +35,13 @@ struct CoursesCard: View {
             Text(course.title)
                 .bold()
                 .foregroundColor(.white)
+                .multilineTextAlignment(.leading)
                 .lineLimit(2)
             
             Text(course.subTitle)
                 .font(.footnote)
                 .foregroundColor(.white)
+                .multilineTextAlignment(.leading)
                 .lineLimit(1)
         }
         .padding(.all)

@@ -39,6 +39,7 @@ struct TutorialsCard: View {
             Text(tutorial.title)
                 .bold()
                 .foregroundColor(.white)
+                .multilineTextAlignment(.leading)
                 .lineLimit(2)
             
             Text(tutorial.subTitle)
@@ -51,6 +52,7 @@ struct TutorialsCard: View {
                 .foregroundColor(.white)
                 .padding(.top, 4)
                 .padding(.bottom, 20)
+                .multilineTextAlignment(.leading)
                 .lineLimit(3)
         }
         .padding(.all)

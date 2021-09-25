@@ -32,6 +32,7 @@ struct HorizontalScrollCards: View {
             
             Text(scrollCardsData.title)
                 .font(.system(size: 24, weight:.bold))
+                .multilineTextAlignment(.leading)
                 .foregroundColor(.white)
                 .frame(maxWidth: 200, alignment: .leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -43,6 +44,7 @@ struct HorizontalScrollCards: View {
             Text(scrollCardsData.subTitle)
                 .font(.subheadline)
                 .foregroundColor(.white)
+                .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 12)
@@ -51,6 +53,7 @@ struct HorizontalScrollCards: View {
             Text(scrollCardsData.description)
                 .font(.subheadline)
                 .foregroundColor(.white)
+                .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)

@@ -47,6 +47,25 @@ struct LivestreamsDetailView: View {
                                 Image("penlogo")
                                     .resizable()
                                     .frame(width: 35, height: 35)
+                                    .contextMenu {
+                                        Button {
+                                            print("checked in tapped")
+                                        } label: {
+                                            Label("Check In", systemImage: "person.fill.checkmark")
+                                        }
+
+                                        Button {
+                                            print("checked in tapped2")
+                                        } label: {
+                                            Label("Call Location", systemImage: "phone.fill")
+                                        }
+                                        
+                                        Button {
+                                            print("checked in tapped3")
+                                        } label: {
+                                            Label("Get Directions", systemImage: "location.fill")
+                                        }
+                                    }
                                 
                                 Image(uiImage: #imageLiteral(resourceName: "mengto"))
                                     .resizable()

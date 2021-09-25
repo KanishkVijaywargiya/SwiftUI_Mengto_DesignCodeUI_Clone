@@ -66,8 +66,9 @@ struct Courses: View {
                 courseContent
                 
                 trigger
+                    .frame(height: 50)
                 
-                recentSection
+                recentSection.padding(.top, 18)
             }
             .padding(.top)
         }

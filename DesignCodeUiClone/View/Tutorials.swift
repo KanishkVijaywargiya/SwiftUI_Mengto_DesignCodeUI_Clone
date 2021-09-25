@@ -65,9 +65,9 @@ struct Tutorials: View {
                 
                 tutorialContent
                 
-                trigger
+                trigger.frame(height: 50)
                 
-                recentTutorialSection
+                recentTutorialSection.padding(.top, 18)
             }
             .padding(.top)
         }
