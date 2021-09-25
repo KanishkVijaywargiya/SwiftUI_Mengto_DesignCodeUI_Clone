@@ -49,21 +49,9 @@ struct LivestreamsDetailView: View {
                                     .frame(width: 35, height: 35)
                                     .contextMenu {
                                         Button {
-                                            print("checked in tapped")
+                                            print("Share")
                                         } label: {
-                                            Label("Check In", systemImage: "person.fill.checkmark")
-                                        }
-
-                                        Button {
-                                            print("checked in tapped2")
-                                        } label: {
-                                            Label("Call Location", systemImage: "phone.fill")
-                                        }
-                                        
-                                        Button {
-                                            print("checked in tapped3")
-                                        } label: {
-                                            Label("Get Directions", systemImage: "location.fill")
+                                            Label("Share", systemImage: "square.and.arrow.up")
                                         }
                                     }
                                 
