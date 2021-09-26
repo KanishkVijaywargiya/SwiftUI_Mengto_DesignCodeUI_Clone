@@ -293,14 +293,3 @@ struct LearnNow_Previews: PreviewProvider {
     }
 }
 
-//Image(systemName: "flame")
-//    .font(.system(size: 100, weight: .regular))
-//    .imageScale(.large)
-//    .symbolVariant(.circle.fill)
-//    .symbolRenderingMode(.palette)
-//    .foregroundStyle(
-//        Color.white.opacity(0.8),
-//        Color.orange,
-//        LinearGradient(colors: [.orange, .yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
-//    )
-//    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 40))
