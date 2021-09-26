@@ -82,7 +82,7 @@ struct LearnNow: View {
                             .overlay(
                                 Circle()
                                     .stroke(Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)), lineWidth: 0.2)
-                        )
+                            )
                     }
                 }
                 
@@ -184,7 +184,7 @@ struct LearnNow: View {
                             withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)) {
                                 show.toggle()
                                 selectedItem = item
-//                                isDisabled = true
+                                //                                isDisabled = true
                             }
                         }
                         .disabled(isDisabled)
@@ -201,13 +201,13 @@ struct LearnNow: View {
             ZStack(alignment: .topTrailing) {
                 DetailView(livestream: selectedItem!, namespace: namespace)
                 
-                #if os(iOS)
+#if os(iOS)
                 closedButton
                     .padding(.trailing, 16)
-                #else
+#else
                 closedButton
                     .padding()
-                #endif
+#endif
             }
             .zIndex(2)
             .frame(maxWidth: 712)
@@ -223,6 +223,7 @@ struct LearnNow: View {
             }
             .tabItem {
                 Image(systemName: "house")
+                    .renderingMode(.original)
                 Text("Learn Now")
             }.tag(0)
             
@@ -246,7 +247,7 @@ struct LearnNow: View {
                 Livestreams()
             }
             .tabItem {
-                Image(systemName: "tv")
+                Image(systemName: "4k.tv")
                 Text("Livestreams")
             }.tag(3)
             
@@ -292,3 +293,14 @@ struct LearnNow_Previews: PreviewProvider {
     }
 }
 
+//Image(systemName: "flame")
+//    .font(.system(size: 100, weight: .regular))
+//    .imageScale(.large)
+//    .symbolVariant(.circle.fill)
+//    .symbolRenderingMode(.palette)
+//    .foregroundStyle(
+//        Color.white.opacity(0.8),
+//        Color.orange,
+//        LinearGradient(colors: [.orange, .yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
+//    )
+//    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 40))
