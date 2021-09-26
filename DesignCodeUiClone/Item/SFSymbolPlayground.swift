@@ -23,6 +23,8 @@ struct SFSymbolPlayground: View {
                     LinearGradient(colors: [.orange, .yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 40))
+            .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 0)
+            
         }
     }
 }
