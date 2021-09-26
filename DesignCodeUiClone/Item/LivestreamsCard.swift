@@ -24,6 +24,7 @@ struct LivestreamsCard: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 16)
                         .padding(.bottom, 8)
+                        .multilineTextAlignment(.leading)
                     
                     VStack(spacing: 8) {
                         Image(livestream.courseLogo)
@@ -38,6 +39,7 @@ struct LivestreamsCard: View {
                 
                 Text(livestream.subHeadline)
                     .font(.subheadline)
+                    .multilineTextAlignment(.leading)
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 20)
@@ -90,6 +92,7 @@ func FootText(courseText: String) -> some View {
     HStack {
         VStack(alignment: .leading, spacing: 4) {
             Text("This is a compilation of the \(courseText) live streams hosted by Meng. Over there he talks and teaches how to use design systems, typography, navigation, iOS 14 Designs.")
+                .multilineTextAlignment(.leading)
         }
         .lineLimit(2)
         .font(.subheadline)

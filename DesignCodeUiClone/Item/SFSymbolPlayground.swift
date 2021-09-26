@@ -20,7 +20,7 @@ struct SFSymbolPlayground: View {
                 .foregroundStyle(
                     Color.white.opacity(0.8),
                     Color.orange,
-                    LinearGradient(colors: [.orange, .yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
+                    LinearGradient(colors: [.red, .purple], startPoint: .topLeading, endPoint: .bottomTrailing)
                 )
             .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 40))
             .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 0)

@@ -29,6 +29,7 @@ struct LivestreamsCardRows: View {
                         .font(.subheadline).bold()
                         .foregroundColor(.primary)
                         .lineLimit(2)
+                        .multilineTextAlignment(.leading)
                     
                     Spacer()
                     
@@ -38,12 +39,14 @@ struct LivestreamsCardRows: View {
                         .padding(8)
                         .background(item.color)
                         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        .multilineTextAlignment(.leading)
                 }
                 
                 Text(item.subHeadline)
                     .font(.footnote)
                     .foregroundColor(.primary)
                     .lineLimit(2)
+                    .multilineTextAlignment(.leading)
             }
             
             Spacer()
