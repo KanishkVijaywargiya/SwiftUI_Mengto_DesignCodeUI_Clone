@@ -58,6 +58,10 @@ struct DetailView: View {
                                     .matchedGeometryEffect(id: "uiImage", in: namespace)
                                     .frame(width: 35, height: 35)
                                     .clipShape(Circle())
+                                    .contextMenu {
+                                        Text("Designer & Creator: MengTo")
+                                            .font(.system(size: 14, weight: .bold))
+                                    }
                             }
                             .padding(.trailing, 16)
                         }

@@ -62,6 +62,10 @@ struct LivestreamsDetailView: View {
                                     .resizable()
                                     .frame(width: 35, height: 35)
                                     .clipShape(Circle())
+                                    .contextMenu {
+                                        Text("Designer & Creator: MengTo")
+                                            .font(.system(size: 14, weight: .bold))
+                                    }
                             }
                             .padding(.trailing, 16)
                             .padding(.top)

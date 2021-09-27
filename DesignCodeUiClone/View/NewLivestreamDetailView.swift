@@ -37,6 +37,10 @@ struct NewLivestreamDetailView: View {
                             .resizable()
                             .frame(width: 35, height: 35)
                             .clipShape(Circle())
+                            .contextMenu {
+                                Text("Designer & Creator: MengTo")
+                                    .font(.system(size: 14, weight: .bold))
+                            }
                         Image(livestream.courseLogo)
                             .resizable().frame(width: 35, height: 35)
                             .contextMenu {
