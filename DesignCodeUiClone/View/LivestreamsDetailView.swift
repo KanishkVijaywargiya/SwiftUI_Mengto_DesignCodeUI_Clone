@@ -17,6 +17,7 @@ struct LivestreamsDetailView: View {
     var livestreamsSection: LivestreamSectionDummyData = livestreamSection[0]
     
     @State var showToast = false
+    @State var showLink = false
     @State var showVideoModal = false
     @State var viewState = CGSize.zero
     @State var isDragging = false
@@ -76,9 +77,8 @@ struct LivestreamsDetailView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
                     .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 10)
                     
-                    DetailResourcesContent()
+                    DetailResourcesContent(showToast: $showLink)
                 }
-                .showToast(title: "video not available", isPresented: $showToast)
             }
             
             #if os(iOS)
@@ -92,6 +92,8 @@ struct LivestreamsDetailView: View {
         }
         .navigationBarHidden(true)
         .ignoresSafeArea()
+        .showToast(title: "video not available", isPresented: $showToast)
+        .showToast(title: "URL not available", isPresented: $showLink)
     }
     
     // custom background image
