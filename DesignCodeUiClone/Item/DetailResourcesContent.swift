@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import AwesomeToast
 
 struct DetailResourcesContent: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.openURL) var openURL
     
+    @State var showToast = false
     @State var urlString = "https://www.apple.com/in/"
     
     @State var figma = false
@@ -61,13 +63,18 @@ struct DetailResourcesContent: View {
                             Text("https://www.figma.com")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $figma) {
                             SafariView(url:URL(string: "https://www.figma.com")!)
                         }
-                        //                        Link("http://material.io",
-                        //                             destination: URL(string: "http://material.io")!)
+                        
+                        //                        Link("https://www.figma.com",
+                        //                             destination: URL(string: "https://www.figma.com")!)
                         //                            .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
+                        //                            .fullScreenCover(isPresented: $figma) {
+                        //                                SafariView(url:URL(string: "https://www.figma.com")!)
+                        //                            }
                     }
                     
                     HStack {
@@ -83,6 +90,7 @@ struct DetailResourcesContent: View {
                             Text("https://material.io")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $materialdesign) {
                             SafariView(url:URL(string: "https://material.io")!)
@@ -104,6 +112,7 @@ struct DetailResourcesContent: View {
                             Text("https://mobbin.design/browse/ios/apps")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $uipatterns) {
                             SafariView(url:URL(string: "https://mobbin.design/browse/ios/apps")!)
@@ -126,6 +135,7 @@ struct DetailResourcesContent: View {
                             Text("https://developer.apple.com/fonts/")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $sanfranciscofonts) {
                             SafariView(url:URL(string: "https://developer.apple.com/fonts/")!)
@@ -147,6 +157,7 @@ struct DetailResourcesContent: View {
                             Text("https://developer.apple.com/sf-symbols/")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $sfsymbols) {
                             SafariView(url:URL(string: "https://developer.apple.com/sf-symbols/")!)
@@ -168,6 +179,7 @@ struct DetailResourcesContent: View {
                             Text("https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $dynamictype) {
                             SafariView(url:URL(string: "https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/typography")!)
@@ -189,6 +201,7 @@ struct DetailResourcesContent: View {
                             Text("https://shape.so")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $illustrations) {
                             SafariView(url:URL(string: "https://shape.so")!)
@@ -209,6 +222,7 @@ struct DetailResourcesContent: View {
                             Text("https://angle.sh")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $phonemockups) {
                             SafariView(url:URL(string: "https://angle.sh")!)
@@ -237,6 +251,7 @@ struct DetailResourcesContent: View {
                             Text("http://designcode.io/ui-design")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $uidesign) {
                             SafariView(url:URL(string: "http://designcode.io/ui-design")!)
@@ -258,6 +273,7 @@ struct DetailResourcesContent: View {
                             Text("https://designcode.io/figma")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $designsystem) {
                             SafariView(url:URL(string: "https://designcode.io/figma")!)
@@ -279,6 +295,7 @@ struct DetailResourcesContent: View {
                             Text("https://designcode.io/figma-handbook")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $figmahandbook) {
                             SafariView(url:URL(string: "https://designcode.io/figma-handbook")!)
@@ -300,6 +317,7 @@ struct DetailResourcesContent: View {
                             Text("https://designcode.io/ios-design-handbook")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $iosdesignhandbook) {
                             SafariView(url:URL(string: "https://designcode.io/ios-design-handbook")!)
@@ -328,6 +346,7 @@ struct DetailResourcesContent: View {
                             Text("https://designcode.io/swiftui")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $ios13) {
                             SafariView(url:URL(string: "https://designcode.io/swiftui")!)
@@ -349,6 +368,7 @@ struct DetailResourcesContent: View {
                             Text("https://designcode.io/swiftui-ios14")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $ios14) {
                             SafariView(url:URL(string: "https://designcode.io/swiftui-ios14")!)
@@ -370,6 +390,7 @@ struct DetailResourcesContent: View {
                             Text("https://designcode.io/swiftui-handbook")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $swiftuihandbook) {
                             SafariView(url:URL(string: "https://designcode.io/swiftui-handbook")!)
@@ -398,6 +419,7 @@ struct DetailResourcesContent: View {
                             Text("http://discord.com/invite/JGDtQcdk72")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $discord) {
                             SafariView(url:URL(string: "http://discord.com/invite/JGDtQcdk72")!)
@@ -419,6 +441,7 @@ struct DetailResourcesContent: View {
                             Text("http://twitter.com/designcode")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $twitter) {
                             SafariView(url:URL(string: "http://twitter.com/designcode")!)
@@ -440,6 +463,7 @@ struct DetailResourcesContent: View {
                             Text("http://www.instagram.com/mengto")
                                 .foregroundColor(Color(#colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)))
                                 .multilineTextAlignment(.leading)
+                                .allowsHitTesting(false)
                         }
                         .fullScreenCover(isPresented: $insta) {
                             SafariView(url:URL(string: "http://www.instagram.com/mengto")!)
